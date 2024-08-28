@@ -42,17 +42,11 @@ Install the required packages using:
 pip install -r requirements.txt
 ```
 
-## Audio Samples
-
-The audio samples used in this project can be accessed and downloaded from [Google Drive](https://drive.google.com/drive/folders/19tc65jlCDst04DHeCmG3SAtVSIXoeHVW?usp=sharing). 
-
-Please ensure you download these samples and place them in the `project/data/` directory before running the model.
-
 ### Usage
 
 Ensure you have Python 3.9.16 installed. You'll also need the following Python packages:
 
-1. **Prepare the Dataset**: Place your annotated speech dataset in the `project/data/` directory.
+1. **Prepare the Dataset**: The audio samples used in this project can be accessed and downloaded from [Google Drive](https://drive.google.com/drive/folders/19tc65jlCDst04DHeCmG3SAtVSIXoeHVW?usp=sharing). Place your annotated speech dataset in the `project/data/` directory.
 
 2. **Train the Model**: Run the following command to start the training process:
 ```bash
