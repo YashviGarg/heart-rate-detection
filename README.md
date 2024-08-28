@@ -14,6 +14,7 @@ This repository contains a deep learning project designed to classify heart rate
 ## Project Structure
 
 ```bash
+Project/
 ├── finalyearclassification.py  # Main script for model implementation
 ├── data/                       # (Optional) Directory for storing the dataset
 ├── models/                     # (Optional) Directory for saving trained models
