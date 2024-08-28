@@ -67,7 +67,7 @@ Contributions are welcome! Please fork this repository, make your changes, and s
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more information.
+This project is open for viewing purposes only. No license is granted for use, modification, or distribution of this code. Please contact me directly if you have any questions.
 
 ## Contact
 
