@@ -236,14 +236,13 @@ y.shape
 from sklearn.model_selection import train_test_split
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=0)
 
+# Standardize the feature matrices
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
 import tensorflow as tf
-print(tf.__version__)
-
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense,Dropout,Activation,Flatten
 from tensorflow.keras.optimizers import Adam
@@ -269,11 +268,12 @@ model.add(Dropout(0.2))
 model.add(Dense(num_labels))
 model.add(Activation('softmax'))
 
+# Display the model's architecture
 model.summary()
 
 model.compile(loss='categorical_crossentropy',metrics=['accuracy'],optimizer='adam')
 
-## Trianing my model
+# Train the model with the training data
 from tensorflow.keras.callbacks import ModelCheckpoint
 from datetime import datetime
 
@@ -288,18 +288,23 @@ start = datetime.now()
 model.fit(X_train, y_train, batch_size=num_batch_size, epochs=num_epochs, validation_data=(X_test, y_test), callbacks=[checkpointer], verbose=1)
 
 
+# Calculate the duration of the training process
 duration = datetime.now() - start
 print("Training completed in time: ", duration)
 
+# Evaluate the model on the test data
 test_accuracy=model.evaluate(X_test,y_test,verbose=0)
 print(test_accuracy[1])
 
+# Make predictions on the test data
 y_pred = model.predict(X_test)
 y_pred = (y_pred > 0.5)
 
+# Generate and display the confusion matrix
 from sklearn.metrics import multilabel_confusion_matrix
 multilabel_confusion_matrix(y_test, y_pred)
 
+# Calculate and display accuracy, precision, recall, and F1-score
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 print('\nAccuracy: {:.2f}\n'.format(accuracy_score(y_test, y_pred)))
 
@@ -315,6 +320,7 @@ print('Weighted Precision: {:.2f}'.format(precision_score(y_test, y_pred, averag
 print('Weighted Recall: {:.2f}'.format(recall_score(y_test, y_pred, average='weighted')))
 print('Weighted F1-score: {:.2f}'.format(f1_score(y_test, y_pred, average='weighted')))
 
+# Generate and display a detailed classification report
 from sklearn.metrics import classification_report
 print('\nClassification Report\n')
 print(classification_report(y_test, y_pred, target_names=['Class 1', 'Class 2']))
