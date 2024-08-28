@@ -4,21 +4,21 @@
 # Load an audio signal and plot its waveform
 import librosa
 import matplotlib.pyplot as plt
-signal, sr = librosa.load('C:/Users/Yashvi/Desktop/TestCases/TestCase40.wav', sr=44100)
+signal, sr = librosa.load('C:/Users/Yashvi/Desktop/Project/TestCases/TestCase40.wav', sr=44100)
 plt.figure(figsize=(4, 4))
 plt.plot(signal)
 
 
 # Play an audio file in the notebook
 import IPython.display as ipd
-ipd.Audio('C:/Users/Yashvi/Desktop/TestCases/TestCase1.wav')
+ipd.Audio('C:/Users/Yashvi/Desktop/Project/TestCases/TestCase1.wav')
 
 # Set the path for the audio dataset and load the metadata CSV file
 import pandas as pd
 import os
 import librosa
-audio_dataset_path='C:/Users/Yashvi/Desktop/TestCases/'
-metadata=pd.read_csv('C:/Users/Yashvi/Desktop/final_dataset.csv')
+audio_dataset_path='C:/Users/Yashvi/Desktop/Project/TestCases/'
+metadata=pd.read_csv('C:/Users/Yashvi/Desktop/Project/final_dataset.csv')
 metadata.head()
 
 import numpy as np
