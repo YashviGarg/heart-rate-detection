@@ -1,78 +1,99 @@
 # Heart Rate Monitoring System using Human Speech
 
+**B.Tech Final Year Project (Aug 2021 - Dec 2021)**
+
 ## Overview
 
-This repository contains a deep learning project designed to classify heart rates as normal or abnormal from human speech signals. The model utilizes advanced audio preprocessing techniques and a neural network to analyze speech signals and predict heart rate categories with high accuracy.
+This patent-pending deep learning project uses speech signals to classify heart rates into normal and abnormal categories, accounting for both physical and emotional factors. The system leverages advanced audio processing techniques and neural networks to provide a non-invasive approach to heart rate monitoring and classification.
+
+## Key Achievements
+
+- Developed a novel approach to heart rate monitoring using only speech signals
+- Achieved **79% accuracy and 0.89 precision** in heart rate classification
+- Realized an **80% increase in information retrieval efficiency** through audio preprocessing techniques
+- Created a system that accounts for physical and emotional factors affecting heart rate
 
 ## Features
 
-- **Deep Learning Model**: Built using TensorFlow and PyTorch, capable of classifying heart rates based on speech signals.
-- **Audio Preprocessing**: Leverages the Librosa library for comprehensive audio feature extraction.
-- **Data Augmentation**: Includes data augmentation techniques to enhance model performance.
-- **High Accuracy**: Achieves an accuracy of 79% and a precision of 0.89 on the test dataset.
+- **Advanced Audio Preprocessing**: Loads and processes speech recordings using specialized techniques
+- **Feature Extraction**: Extracts MFCCs and mel-spectrograms from audio data with Librosa
+- **Data Augmentation**: Implements four different audio augmentation techniques:
+  - Random noise addition
+  - Time shifting
+  - Pitch modification
+  - Speed adjustment
+- **Multi-label Classification**: Classifies heart rates while accounting for:
+  - Gender (Male/Female)
+  - Age group (20-29, 30-39, 40-49, 50-59, 60-69)
+  - Emotional state (after_workout, happy, neutral, relaxed, stressed, tired)
+  - BPM (heart rate in beats per minute)
+- **Comprehensive Model Evaluation**: Performance metrics including accuracy, precision, recall, and F1-score
 
-## Project Structure
+## Technical Implementation
 
-```bash
-project/
-├── finalyearclassification.py  # Main script for model implementation
-├── data/                       # (Optional) Directory for storing the dataset
-├── models/                     # (Optional) Directory for saving trained models
-├── logs/                       # (Optional) Directory for storing logs
-├── .gitignore                  # Configuration for ignoring unnecessary files
-└── README.md                   # Project documentation (this file)
-```
+The project uses the following libraries and technologies:
 
-## Getting Started
+- **Librosa**: For audio feature extraction and manipulation
+- **TensorFlow/Keras**: For building and training the neural network
+- **Pandas & NumPy**: For data manipulation and numerical operations
+- **Scikit-learn**: For data preprocessing and model evaluation
+- **Matplotlib**: For visualization of audio signals and spectrograms
 
-### Prerequisites
+The neural network architecture consists of:
+- Input layer accepting 26 features
+- Three hidden layers with ReLU activation and dropout for regularization
+- Output layer with softmax activation for multi-class classification
 
-Ensure you have Python 3.9.16 installed. You'll also need the following Python packages:
+## Dataset
 
-- TensorFlow
-- PyTorch
+The model is trained on a diverse dataset of speech signals:
+- Professionally annotated by a medical expert
+- Includes subjects of different genders, age groups, and emotional states
+- Each recording is labeled with these attributes along with heart rate measurements
+- Available via [Google Drive](https://drive.google.com/drive/folders/19tc65jlCDst04DHeCmG3SAtVSIXoeHVW?usp=sharing)
+
+## Usage
+
+1. **Prepare the Dataset**: Download the speech dataset from the Google Drive link and place it in the `project/testCases/` directory
+2. **Update Metadata**: Ensure the `project/final_dataset.csv` contains proper information about your recordings
+3. **Run the Model**: Execute the script to extract features, train the model, and evaluate performance:
+   ```bash
+   python finalyearclassification.py
+   ```
+4. **Access Results**: The trained model will be saved at `saved_models/audio_classification.hdf5`
+
+## Requirements
+
+- Python 3.9.16
+- TensorFlow 2.0+
 - Librosa
 - NumPy
 - Pandas
 - Scikit-learn
+- Matplotlib
 
 Install the required packages using:
-
 ```bash
 pip install -r requirements.txt
 ```
 
-### Usage
+## Future Work
 
-Ensure you have Python 3.9.16 installed. You'll also need the following Python packages:
-
-1. **Prepare the Dataset**: The audio samples used in this project can be accessed and downloaded from [Google Drive](https://drive.google.com/drive/folders/19tc65jlCDst04DHeCmG3SAtVSIXoeHVW?usp=sharing). Place your annotated speech dataset in the `project/data/` directory.
-
-2. **Train the Model**: Run the following command to start the training process:
-```bash
-python finalyearclassification.py
-```
-3. **Evaluate the Model**: The script will automatically evaluate the model's performance on the test dataset and display the accuracy and precision metrics.
-
-## Results
-
-The model has been tested and achieves the following results:
-
-- **Accuracy**: 79%
-- **Precision**: 0.89
-
-## Contributing
-
-Contributions are welcome! Please fork this repository, make your changes, and submit a pull request for review.
+Potential improvements and extensions include:
+- Implementing more sophisticated feature extraction techniques
+- Exploring different neural network architectures (e.g., CNNs, RNNs)
+- Expanding the dataset with more diverse speech recordings
+- Deploying the model as a web application or mobile app for practical use
 
 ## License
 
-This project is open for viewing purposes only. No license is granted for use, modification, or distribution of this code. Please contact me directly if you have any questions.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Feel free to use, modify, and distribute this code for academic, personal, or commercial purposes. Attribution is appreciated but not required.
 
 ## Contact
 
 For any questions or feedback, feel free to reach out:
-
 - **Email**: [yashvigarg8080@gmail.com](mailto:yashvigarg8080@gmail.com)
 - **LinkedIn**: [Yashvi Garg](https://www.linkedin.com/in/yashvigarg)
 - **GitHub**: [Yashvi Garg](https://github.com/YashviGarg)
